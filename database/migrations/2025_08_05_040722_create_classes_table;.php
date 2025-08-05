@@ -9,12 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id'); // FK ke users
-            $table->unsignedBigInteger('extracuricullers_id'); // FK ke extraculiculers
+        Schema::create('classes', function (Blueprint $table) {
+            $table->id(); // primary key auto increment
+
+            $table->string('level', 191); // contoh: "X", "XI", "XII"
+            $table->unsignedBigInteger('major_id'); // FK ke majors
+            $table->unsignedBigInteger('number'); // nomor kelas: 1,2,3 dst
 
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
@@ -24,11 +26,10 @@ return new class extends Migration
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
             $table->timestamp('deleted_at')->nullable();
 
-            $table->string('sys_note')->nullable();
+            $table->text('sys_note')->nullable();
 
             // Foreign keys
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('extracuricullers_id')->references('id')->on('extracuricullers');
+            $table->foreign('major_id')->references('id')->on('majors');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
             $table->foreign('deleted_by')->references('id')->on('users');
@@ -40,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('classes');
     }
 };
