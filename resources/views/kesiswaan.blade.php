@@ -42,7 +42,7 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
+    <link rel="stylesheet" href="{{ asset('/dist/css/adminlte.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -86,7 +86,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../../dist/assets/img/user1-128x128.jpg"
+                        src="{{ asset('dist/assets/img/user1-128x128')}}.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -112,7 +112,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../../dist/assets/img/user8-128x128.jpg"
+                        src="{{ asset('dist/assets/img/user8-128x128.jpg')}}"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -801,7 +801,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="../../../dist/js/adminlte.js"></script>
+    <script src="{{ asset('dist/js/adminlte.js')}}"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
