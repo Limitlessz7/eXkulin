@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController; // <-- Make sure this is included
 
+// Home route
 Route::get('/', function () {
     return view('welcome');
-   
 });
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard_page'])->name('dashboard');
+
+// Dashboard route
+Route::get('/dashboard', [DashboardController::class, 'dashboard_page'])->name('dashboard');
