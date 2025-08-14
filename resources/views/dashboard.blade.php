@@ -570,7 +570,7 @@
                 </div>
                 <div class="card text-white bg-primary bg-gradient border-primary mb-4">
                   <div class="card-header border-0">
-                    <h3 class="card-title">Sales Value</h3>
+                    <h3 class="card-title">Location</h3>
                     <div class="card-tools">
                       <button
                         type="button"
@@ -614,8 +614,8 @@
         <!--end::To the end-->
         <!--begin::Copyright-->
         <strong>
-          Copyright &copy; 2014-2024&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+          Copyright &copy; 2025&nbsp;
+          <a href="#" class="text-decoration-none">Swiftserveweb</a>.
         </strong>
         All rights reserved.
         <!--end::Copyright-->
