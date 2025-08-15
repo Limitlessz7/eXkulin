@@ -267,7 +267,7 @@
             />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">AdminLTE 4</span>
+            <span class="brand-text fw-light">eXkulin</span>
             <!--end::Brand Text-->
           </a>
           <!--end::Brand Link-->
@@ -277,12 +277,7 @@
         <div class="sidebar-wrapper">
           <nav class="mt-2">
             <!--begin::Sidebar Menu-->
-            <ul
-              class="nav sidebar-menu flex-column"
-              data-lte-toggle="treeview"
-              role="menu"
-              data-accordion="false"
-            >
+            <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-speedometer"></i>
@@ -308,6 +303,173 @@
                     <a href="../index3.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v3</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Extracurricular
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>View</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index2.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Manage</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon bi bi-speedometer"></i>
+                      <p>
+                        ManageApplications
+                        <i class="nav-arrow bi bi-chevron-right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                          <i class="nav-icon bi bi-circle"></i>
+                          <p>JoinRequests</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                          <i class="nav-icon bi bi-circle"></i>
+                          <p>AcceptHistory</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                          <i class="nav-icon bi bi-circle"></i>
+                          <p>RejectHistory</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Account
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>ManageRole</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>ManageAccount</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>AccountList</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Membership
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>ViewsMember</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Manage</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Class
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Manage</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Major
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Manage</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>View</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    StudentAssessment
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Manage</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>View</p>
                     </a>
                   </li>
                 </ul>
