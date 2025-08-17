@@ -98,35 +98,54 @@
 
             <!-- Right side -->
             <div class="col-6 right-side">
-                <form class="login-box" method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <h3>SIGN IN</h3>
+             <form class="login-box" method="POST" action="{{ route('login.post') }}">
+    @csrf
+    <h3>SIGN IN</h3>
 
-                    <!-- Email -->
-                    <div class="input-group">
-                        <input type="email" name="email" class="form-control" placeholder="EMAIL" required>
-                        <span class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M15.964 0.686a.5.5 0 0 1 .11.638l-15 15a.5.5 0 0 1-.848-.456l1.573-5.058L10.854 1.146a.5.5 0 0 1 4.11-.46z"/>
-                            </svg>
-                        </span>
-                    </div>
+    <!-- Email -->
+    <div class="input-group mb-3">
+        <input type="email" name="email" 
+            class="form-control @error('email') is-invalid @enderror"
+            value="{{ old('email') }}"
+            placeholder="EMAIL" required id="email" autofocus
+            style="padding-right: 40px;">
 
-                    <!-- Password -->
-                    <div class="input-group">
-                        <input type="password" name="password" class="form-control" placeholder="PASSWORD" required>
-                        <span class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 1a3 3 0 0 0-3 3v3H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-1V4a3 3 0 0 0-3-3z"/>
-                            </svg>
-                        </span>
-                    </div>
+        <span class="input-group-text" style="margin-left: -35px; background: transparent; border: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+                fill="currentColor" viewBox="0 0 16 16">
+                <path d="M15.964 0.686a.5.5 0 0 1 .11.638l-15 15a.5.5 0 0 1-.848-.456l1.573-5.058L10.854 1.146a.5.5 0 0 1 4.11-.46z"/>
+            </svg>
+        </span>
 
-                    <!-- Button -->
-                    <button type="submit" class="btn btn-login w-100">LOGIN</button>
-                </form>
+        @error('email')
+            <div class="invalid-feedback d-block">
+                {{ $message }}
             </div>
-        </div>
+        @enderror
     </div>
-</body>
-</html>
+
+    <!-- Password -->
+    <div class="input-group mb-3">
+        <input type="password" name="password" 
+            class="form-control @error('password') is-invalid @enderror"
+            placeholder="PASSWORD" required id="password"
+            style="padding-right: 40px;">
+
+        <span class="input-group-text" style="margin-left: -35px; background: transparent; border: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+                fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 1a3 3 0 0 0-3 3v3H4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-1V4a3 3 0 0 0-3-3z"/>
+            </svg>
+        </span>
+
+        @error('password')
+            <div class="invalid-feedback d-block">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+
+    <!-- Button -->
+    <button type="submit" class="btn btn-login w-100">LOGIN</button>
+</form>
+            
