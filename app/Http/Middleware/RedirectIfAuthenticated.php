@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$guards)
     {
-        // Kalau user sudah login → redirect ke dashboard
-        if (Auth::check()) {
-            return redirect()->route('dashboard');
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                // Kalau sudah login → lempar ke dashboard
+                return redirect()->route('dashboard');
+            }
         }
 
         return $next($request);

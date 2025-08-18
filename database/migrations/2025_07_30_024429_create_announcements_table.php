@@ -10,29 +10,30 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up()
-{
-    Schema::create('announcements', function (Blueprint $table) {
-        $table->id(); // bigint auto increment
-        $table->string('title');
-        $table->string('extracuricullers_id'); // FK ke ekskuls (ubah ke unsignedBigInteger jika ekskuls_id numeric)
+    {
+        Schema::create('announcements', function (Blueprint $table) {
+            $table->id('anc_id'); // bigint auto increment primary key
 
-        $table->unsignedBigInteger('created_by');
-        $table->unsignedBigInteger('updated_by')->nullable();
-        $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->string('anc_title');
+            $table->unsignedBigInteger('anc_extracuriculler_id'); // FK ke extracuricullers (pastikan tipe numeric)
 
-        $table->timestamp('created_at')->useCurrent();
-        $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
-        $table->timestamp('deleted_at')->nullable();
+            $table->unsignedBigInteger('anc_created_by');
+            $table->unsignedBigInteger('anc_updated_by')->nullable();
+            $table->unsignedBigInteger('anc_deleted_by')->nullable();
 
-        $table->string('sys_note', 255)->nullable();
+            $table->timestamp('anc_created_at')->useCurrent();
+            $table->timestamp('anc_updated_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamp('anc_deleted_at')->nullable();
 
-        // FK user (optional, sesuaikan kebutuhan)
-        $table->foreign('created_by')->references('id')->on('users');
-        $table->foreign('updated_by')->references('id')->on('users');
-        $table->foreign('deleted_by')->references('id')->on('users');
-    });
-}
+            $table->string('anc_sys_note', 255)->nullable();
 
+            // Foreign keys
+            $table->foreign('anc_extracuriculler_id')->references('ext_id')->on('extracuricullers');
+            $table->foreign('anc_created_by')->references('usr_id')->on('users');
+            $table->foreign('anc_updated_by')->references('usr_id')->on('users');
+            $table->foreign('anc_deleted_by')->references('usr_id')->on('users');
+        });
+    }
 
     /**
      * Reverse the migrations.

@@ -1,33 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AuthController;
 
-// 👇 PAKAI middleware dari App\Http\Middleware, bukan Illuminate
-use App\Http\Middleware\Authenticate;
-use App\Http\Middleware\RedirectIfAuthenticated;
-
-// Welcome page → public
+// Halaman welcome
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-// Login → hanya untuk guest (belum login)
+// Login routes
 Route::get('/login', [AuthController::class, 'login_page'])
     ->name('login')
-    ->middleware(RedirectIfAuthenticated::class);
+    ->middleware('guest');
 
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/login', [AuthController::class, 'login'])
+    ->name('login.post')
+    ->middleware('guest');
 
-// Logout → hanya untuk user login
 Route::post('/logout', [AuthController::class, 'logout'])
     ->name('logout')
-    ->middleware(Authenticate::class);
+    ->middleware('auth');
 
-// Dashboard → hanya untuk user login
-Route::middleware([Authenticate::class])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'dashboard_page'])->name('dashboard');
+// Dashboard (hanya untuk user yang login)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard_page'])
+        ->name('dashboard');
 });
-
-// Other routes can be added here as needed

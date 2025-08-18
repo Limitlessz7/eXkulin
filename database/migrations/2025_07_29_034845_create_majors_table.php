@@ -6,31 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {   
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('majors', function (Blueprint $table) {
-                   $table->id(); // BIGINT auto increment, primary key
-            $table->string('name', 191);
-            $table->unsignedBigInteger('created_by');
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
-            $table->timestamps(); // created_at & updated_at
-            $table->softDeletes(); // deleted_at
-            $table->text('sys_note')->nullable();
+            $table->id('mjr_id'); // primary key dengan prefix mjr_
+            $table->string('mjr_name', 191);
+            $table->unsignedBigInteger('mjr_created_by');
+            $table->unsignedBigInteger('mjr_updated_by')->nullable();
+            $table->unsignedBigInteger('mjr_deleted_by')->nullable();
+
+            $table->timestamp('mjr_created_at')->useCurrent();
+            $table->timestamp('mjr_updated_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamp('mjr_deleted_at')->nullable();
+
+            $table->text('mjr_sys_note')->nullable();
 
             // Foreign key constraints
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
-            $table->foreign('deleted_by')->references('id')->on('users');
+            $table->foreign('mjr_created_by')->references('usr_id')->on('users');
+            $table->foreign('mjr_updated_by')->references('usr_id')->on('users');
+            $table->foreign('mjr_deleted_by')->references('usr_id')->on('users');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('majors');

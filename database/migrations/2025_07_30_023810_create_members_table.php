@@ -6,38 +6,33 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id'); // FK ke users
-            $table->unsignedBigInteger('extracuricullers_id'); // FK ke extraculiculers
+            $table->id('mbr_id'); // primary key dengan prefix mbr_
 
-            $table->unsignedBigInteger('created_by');
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('mbr_user_id'); // FK ke users
+            $table->unsignedBigInteger('mbr_extracuriculler_id'); // FK ke extracuricullers
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
-            $table->timestamp('deleted_at')->nullable();
+            $table->unsignedBigInteger('mbr_created_by');
+            $table->unsignedBigInteger('mbr_updated_by')->nullable();
+            $table->unsignedBigInteger('mbr_deleted_by')->nullable();
 
-            $table->string('sys_note')->nullable();
+            $table->timestamp('mbr_created_at')->useCurrent();
+            $table->timestamp('mbr_updated_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamp('mbr_deleted_at')->nullable();
+
+            $table->string('mbr_sys_note')->nullable();
 
             // Foreign keys
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('extracuricullers_id')->references('id')->on('extracuricullers');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
-            $table->foreign('deleted_by')->references('id')->on('users');
+            $table->foreign('mbr_user_id')->references('usr_id')->on('users');
+            $table->foreign('mbr_extracuriculler_id')->references('ext_id')->on('extracuricullers');
+            $table->foreign('mbr_created_by')->references('usr_id')->on('users');
+            $table->foreign('mbr_updated_by')->references('usr_id')->on('users');
+            $table->foreign('mbr_deleted_by')->references('usr_id')->on('users');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('members');
