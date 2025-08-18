@@ -2,60 +2,50 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AuthController extends \App\Http\Controllers\Controller
+class AuthController extends Controller
 {
-    /**
-     * Tampilkan halaman login
-     */
     public function login_page()
     {
         return view('auth.login', [
-            "title" => "Login Page",
+            "title" => "Login page",
             "active" => 'login'
         ]);
     }
 
-    /**
-     * Proses login user
-     */
     public function login(Request $request)
     {
         // Validasi input
         $credentials = $request->validate([
-            'usr_email' => 'required|string|email:dns',
-            'password' => 'required|string',
+            'usr_email' => 'required|email',
+            'usr_password' => 'required'
         ]);
 
-        // Coba login
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate(); // ✅ keamanan session
+        // Sesuaikan key ke Auth
+        $attempt = [
+            'usr_email' => $credentials['usr_email'],
+            'password' => $credentials['usr_password'], // <- wajib pakai 'password'
+        ];
 
-            return redirect()->intended('dashboard') // ✅ fleksibel redirect
-                ->with('success', 'Login berhasil, selamat datang!');
+        if (Auth::attempt($attempt)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
         }
 
-        // Jika gagal
         return back()->withErrors([
-            'usr_email' => 'Email atau password tidak sesuai.',
+            'usr_email' => 'Email atau password salah.',
         ])->onlyInput('usr_email');
     }
 
-    /**
-     * Proses logout user
-     */
     public function logout(Request $request)
     {
         Auth::logout();
-
-        // Hapus session lama
         $request->session()->invalidate();
-
-        // Bikin token baru (CSRF aman)
         $request->session()->regenerateToken();
 
-        return redirect()->route('login')->with('success', 'Anda sudah logout.');
+        return redirect('/login');
     }
 }

@@ -2,36 +2,34 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
 
+    // Nama tabel
+    protected $table = 'users';
+
+    // Primary key
+    protected $primaryKey = 'usr_id';
+
+    // Field yang bisa diisi
     protected $fillable = [
-        'name',
-        'usr_email',  // kolom email kamu
-        'password',
+        'usr_name',
+        'usr_email',
+        'usr_password',
     ];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
-
-    /**
-     * Override kolom username default untuk autentikasi.
-     * Laravel default 'email', kita ganti ke 'usr_email'
-     */
-    public function getAuthIdentifierName()
+    // Laravel default: pakai kolom 'password'
+    // Kita override supaya pakai usr_password
+    public function getAuthPassword()
     {
-        return 'usr_email';
+        return $this->usr_password;
     }
+
+    // Kalau pakai timestamps custom
+    const CREATED_AT = 'usr_created_at';
+    const UPDATED_AT = 'usr_updated_at';
 }

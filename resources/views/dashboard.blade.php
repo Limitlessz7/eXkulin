@@ -393,7 +393,7 @@
                   </button>
                   <div class="collapse mt-2" id="username">
                       <div class="card text-break p-2">
-                          {{ Auth::user()->name }}
+                          {{ Auth::user()->usr_name }}
                       </div>
                   </div>
               </div>
@@ -418,7 +418,7 @@
                   </button>
                   <div class="collapse mt-2" id="email">
                       <div class="card text-break p-2">
-                          {{ Auth::user()->email }}
+                          {{ Auth::user()->usr_email }}
                       </div>
                   </div>
               </div>

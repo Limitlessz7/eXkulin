@@ -4,26 +4,38 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\DashboardController;
 
-// Halaman welcome
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+// =======================
+// LANDING PAGE
+// =======================
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('welcome'); // ganti ke 'landing' kalau nanti bikin landing.blade.php
+})->name('landing');
 
-// Login routes
-Route::get('/login', [AuthController::class, 'login_page'])
-    ->name('login')
-    ->middleware('guest');
+// =======================
+// AUTH
+// =======================
+Route::get('/login', [AuthController::class, 'login_page'])->name('login.page');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-Route::post('/login', [AuthController::class, 'login'])
-    ->name('login.post')
-    ->middleware('guest');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/user/email', function () {
+    return view('user.email');
+})->middleware('auth')->name('user.email');
 
-Route::post('/logout', [AuthController::class, 'logout'])
-    ->name('logout')
-    ->middleware('auth');
-
-// Dashboard (hanya untuk user yang login)
+// =======================
+// DASHBOARD
+// =======================
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'dashboard_page'])
-        ->name('dashboard');
+    // Dashboard utama
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Tambahkan route lain yang hanya bisa diakses setelah login di sini
+    // contoh:
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
