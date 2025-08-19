@@ -10,6 +10,7 @@ class Form extends Model
     use SoftDeletes;
 
     protected $table = 'forms';
+
     protected $primaryKey = 'frm_id';
 
     protected $fillable = [
