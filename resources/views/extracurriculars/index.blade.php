@@ -1,89 +1,107 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Manage Extracurricular</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mnage ekskul</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <x-navbar></x-navbar>
-    <x-sidebar></x-sidebar>
+<x-resource></x-cssjs>
+<x-navbar></x-navbar>
+<x-sidebar></x-sidebar>
+<div class="container mt-4">
+  <h3>Manajemen Ekskul</h3>
 
-    <div class="container mt-5">
-        <h1>MANAGE ESKUL (Extracurricular)</h1>
+  <form class="d-flex mb-3" method="GET" action="">
+    <input class="form-control me-2" type="search" name="search" placeholder="Cari buku..." value="" style="width: 300px;">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
 
-        <table class="table table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th>Nama Eskul</th>
-                    <th>Status</th>
-                    <th>Deskripsi</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Basketball Club</td>
-                    <td>Active</td>
-                    <td>Klub basket untuk siswa yang suka olahraga</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Action
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="/eskul/1/edit">✏️ Edit</a></li>
-                                <li><a class="dropdown-item" href="/eskul/create">➕ Tambah Eskul</a></li>
-                                <li>
-                                    <form action="/eskul/1" method="POST" onsubmit="return confirm('Yakin hapus eskul ini?');" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item text-danger">❌ Hapus</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Music Band</td>
-                    <td>Inactive</td>
-                    <td>Kelompok musik sekolah</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                Action
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="/eskul/2/edit">✏️ Edit</a></li>
-                                <li><a class="dropdown-item" href="/eskul/create">➕ Tambah Eskul</a></li>
-                                <li>
-                                    <form action="/eskul/2" method="POST" onsubmit="return confirm('Yakin hapus eskul ini?');" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="dropdown-item text-danger">❌ Hapus</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <!-- Tambah baris eskul lainnya jika perlu -->
-            </tbody>
-        </table>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="alert alert-danger text-center">Query gagal: </div>
+
+    <table class="table table-bordered">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>ID Buku</th>
+          <th>Kategori</th>
+          <th>Nama Buku</th>
+          <th>Harga</th>
+          <th>Stok</th>
+          <th>Penerbit</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="" class="btn btn-warning btn-sm">Edit</a>
+                <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
+              </td>
+            </tr>
+         
+          <tr><td colspan="7"><div class="alert alert-warning text-center m-0">Data buku tidak ditemukan.</div></td></tr>
+     
+      </tbody>
+    </table>
+    <a href="add-buku.php" class="btn btn-primary">+ Tambah Buku</a>
+ 
+
+  <hr class="my-5">
+  <h3>Manajemen Pengumuman</h3>
+
+  <form class="d-flex mb-3" method="GET" action="">
+    <input class="form-control me-2" type="search" name="search_penerbit" placeholder="Cari penerbit..." value="" style="width: 300px;">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  
+    <div class="alert alert-danger text-center">Query penerbit gagal: </div>
+ 
+    <table class="table table-bordered">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Status</th>
+          <th>description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+      
+         
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="" class="btn btn-warning btn-sm">Edit</a>
+                <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus penerbit ini?')">Hapus</a>
+              </td>
+            </tr>
+  
+          <tr><td colspan="6"><div class="alert alert-warning text-center m-0">Data penerbit tidak ditemukan.</div></td></tr>
+      
+      </tbody>
+    </table>
+    <a href="" class="btn btn-primary">+ Tambah Penerbit</a>
+ >
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+ 
+</script>
+
 </body>
 </html>
-<script>
-    // Script untuk mengaktifkan dropdown
-    document.addEventListener('DOMContentLoaded', function () {
-        var dropdowns = document.querySelectorAll('.dropdown-toggle');
-        dropdowns.forEach(function (dropdown) {
-            dropdown.addEventListener('click', function () {
-                this.classList.toggle('show');
-            });
-        });
-    });

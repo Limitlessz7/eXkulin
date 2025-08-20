@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/eskul', [ExtracurricularController::class, 'index'])->name('extracurricular.index');
 
     // Show detail
-    Route::get('/eskul/{id}', [ExtracurricularController::class, 'show'])->name('extracurricular.show');
+    // Route::get('/eskul/show', [ExtracurricularController::class, 'show'])->name('extracurricular.show');
 
     // Show registration form
     Route::get('/eskul/{id}/daftar', [ExtracurricularController::class, 'create'])->name('extracurricular.create');
