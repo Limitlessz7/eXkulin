@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('extracuricullers', function (Blueprint $table) {
-            $table->id('ext_id'); // BIGINT auto_increment dengan prefix ext_
+            $table->id('ext_id');
             $table->string('ext_name');
             $table->string('ext_status');
             $table->text('ext_description')->nullable();
@@ -24,7 +24,6 @@ return new class extends Migration
 
             $table->string('ext_sys_note', 255)->nullable();
 
-            // Foreign Key Constraints
             $table->foreign('ext_created_by')->references('usr_id')->on('users');
             $table->foreign('ext_updated_by')->references('usr_id')->on('users');
             $table->foreign('ext_deleted_by')->references('usr_id')->on('users');

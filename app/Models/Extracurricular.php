@@ -2,18 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Extracurricular extends Model
 {
-    use HasFactory;
-
-    protected $table = 'extracurriculers'; // sesuaikan dengan nama tabel migration kamu
-
+    protected $table = 'extracuricullers'; // use your current table name
     protected $primaryKey = 'ext_id';
-
-    public $timestamps = false; // karena kamu custom timestamp
+    public $timestamps = false; // since you're using custom timestamp fields
 
     protected $fillable = [
         'ext_name',
@@ -28,7 +24,7 @@ class Extracurricular extends Model
         'ext_sys_note',
     ];
 
-    public function forms()
+    public function forms(): HasMany
     {
         return $this->hasMany(Form::class, 'frm_extracuriculler_id', 'ext_id');
     }

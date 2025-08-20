@@ -16,15 +16,6 @@ class ExtracurricularController extends Controller
         return view('extracurriculars.index', compact('eskuls'));
     }
 
-    // Detail eskul (deskripsi + pengumuman)
-    public function show($id)
-    {
-        $eskul = Extracurricular::with('forms')->findOrFail($id);
-        // kalau ada model Pengumuman, bisa pakai with('announcements') juga
-
-        return view('extracurriculars.show', compact('eskul'));
-    }
-
     // Form daftar eskul (hanya siswa)
     public function create($id)
     {
