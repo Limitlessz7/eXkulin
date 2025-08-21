@@ -23,10 +23,23 @@
     <!-- Contoh alert jika query gagal -->
     <!-- <div class="alert alert-danger text-center">Query gagal: [pesan error]</div> -->
 
+    <div class="card-body">
+      
+      @if (session('succes'))
+        <div class="alert alert-primary alert-dismissible" role="alert">
+          {{ session('succes') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+          
+          
+      @endif
+
+    </div>
+    <a href="tambah-akun.php" class="btn btn-primary mb-3 mt-2">+ Tambah Akun</a>
+
     <table class="table table-bordered">
       <thead class="table-dark text-center">
         <tr>
-          <th>ID</th>
           <th>Nama Lengkap</th>
           <th>Email</th>
           <th>Role</th>
@@ -35,30 +48,23 @@
         </tr>
       </thead>
       <tbody class="text-center">
+        @foreach ($users as $user)
         <!-- Contoh baris data akun -->
         <tr>
-          <td>U001</td>
-          <td>Ahmad Zaki</td>
-          <td>zaki@email.com</td>
-          <td>Admin</td>
-          <td>Aktif</td>
+          <td>{{ $user->usr_name }}</td>
+          <td>{{ $user->usr_email }}</td>
+          <td>{{ $user->usr_roles_id }}</td>
+          <td>{{ $user->usr_activation }}</td>
           <td>
             <a href="edit-akun.php?id=U001" class="btn btn-warning btn-sm">Edit</a>
-            <a href="hapus-akun.php?id=U001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus akun ini?');">Hapus</a>
+            <form action="/accounts/manage-account/{{ $user->usr_id }}" method="POST" onsubmit=" return confirm('yakin ingin dihapus?')">
+              @csrf
+              @method('delete')
+            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+            </form>
           </td>
         </tr>
-        <tr>
-          <td>U002</td>
-          <td>Siti Aminah</td>
-          <td>siti@email.com</td>
-          <td>Siswa</td>
-          <td>Nonaktif</td>
-          <td>
-            <a href="edit-akun.php?id=U002" class="btn btn-warning btn-sm">Edit</a>
-            <a href="hapus-akun.php?id=U002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus akun ini?');">Hapus</a>
-          </td>
-        </tr>
-
+        @endforeach
         <!-- Jika tidak ada data -->
         <!--
         <tr>
@@ -69,9 +75,7 @@
         -->
       </tbody>
     </table>
-
-    <a href="tambah-akun.php" class="btn btn-primary">+ Tambah Akun</a>
-
+    </div>
     <x-footer></x-footer>
   </div>
 

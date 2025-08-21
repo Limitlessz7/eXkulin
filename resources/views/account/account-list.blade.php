@@ -88,41 +88,25 @@
       <thead>
         <tr>
           <th>ID User</th>
-          <th>Nama Lengkap</th>
+          <th>Nama</th>
           <th>Email</th>
           <th>Role</th>
+          <th>Telephone</th>
           <th>Status</th>
         </tr>
       </thead>
       <tbody>
+        @foreach ($users as $user)
         <tr>
-          <td>U001</td>
-          <td>Budi Santoso</td>
-          <td>budi@email.com</td>
-          <td>admin</td>
-          <td>Aktif</td>
+          <td>{{ $user->usr_id }}</td>
+          <td>{{ $user->usr_name }}</td>
+          <td>{{ $user->usr_email }}</td>
+          <td>{{ $user->usr_roles_id }}</td>
+          <td>{{ $user->usr_telephone }}</td>
+          <td>{{ $user->usr_activation }}</td>
+          <td>
         </tr>
-        <tr>
-          <td>U002</td>
-          <td>Sari Putri</td>
-          <td>sari@email.com</td>
-          <td>siswa</td>
-          <td>Aktif</td>
-        </tr>
-        <tr>
-          <td>U003</td>
-          <td>Rizky Maulana</td>
-          <td>rizky@email.com</td>
-          <td>guru</td>
-          <td>Nonaktif</td>
-        </tr>
-        <tr>
-          <td>U004</td>
-          <td>Dewi Lestari</td>
-          <td>dewi@email.com</td>
-          <td>siswa</td>
-          <td>Aktif</td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
 

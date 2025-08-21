@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -61,3 +62,10 @@ Route::redirect('/extracurriculars', '/eskul')->name('extracurriculars.index');
 Route::redirect('/extracurriculars/{id}', '/eskul/{id}');
 Route::redirect('/extracurriculars/{id}/create', '/eskul/{id}/daftar');
 Route::post('/extracurriculars/{id}', [ExtracurricularController::class, 'store'])->name('extracurriculars.store');
+
+
+// Kelola akun
+Route::get('/accounts/manage-account',[AccountController::class, 'index']);
+Route::delete('/accounts/manage-account/{user}',[AccountController::class, 'delete']);
+
+Route::get('/accounts/list-account', [AccountController::class, 'show']);
