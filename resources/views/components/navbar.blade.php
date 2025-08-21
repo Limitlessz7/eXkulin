@@ -73,11 +73,7 @@
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-        <img
-            src="../../../dist/assets/img/user2-160x160.jpg"
-            class="user-image rounded-circle shadow"
-            alt="User Image"
-        />
+      <svg  class="user-image rounded-circle shadow"  xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg> 
         <!-- Username dinamis -->
         <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
     </a>
