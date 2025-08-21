@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manajemen Kelas & Jurusan</title>
+  <title>Manajemen Jurusan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,51 +13,51 @@
 <x-sidebar></x-sidebar>
 
 <div class="container mt-4">
-  <h3>Manajemen Kelas & Jurusan</h3>
+  <h3>Manajemen Jurusan</h3>
 
   <!-- Form Pencarian -->
   <form class="d-flex mb-3" method="GET" action="">
-    <input class="form-control me-2" type="search" name="search" placeholder="Cari berdasarkan nama kelas atau jurusan..." style="width: 300px;">
+    <input class="form-control me-2" type="search" name="search" placeholder="Cari jurusan berdasarkan nama atau kepala jurusan..." style="width: 300px;">
     <button class="btn btn-outline-success" type="submit">Cari</button>
   </form>
 
   <!-- Alert Gagal Query -->
   <!-- <div class="alert alert-danger text-center">Query gagal: [pesan error]</div> -->
 
-  <!-- Tabel Kelas & Jurusan -->
+  <!-- Tabel Jurusan -->
   <table class="table table-bordered">
     <thead class="table-dark text-center">
       <tr>
-        <th>ID Kelas</th>
-        <th>Nama Kelas</th>
-        <th>Jurusan</th>
-        <th>Wali Kelas</th>
+        <th>ID Jurusan</th>
+        <th>Nama Jurusan</th>
+        <th>Kepala Jurusan</th>
         <th>Jumlah Siswa</th>
+        <th>Deskripsi</th>
         <th>Aksi</th>
       </tr>
     </thead>
     <tbody class="text-center">
-      <!-- Contoh data kelas -->
+      <!-- Contoh data jurusan -->
       <tr>
-        <td>KLS001</td>
-        <td>X IPA 1</td>
+        <td>JRS001</td>
         <td>IPA</td>
-        <td>Ibu Siti Aisyah</td>
-        <td>32</td>
+        <td>Drs. Supriyadi</td>
+        <td>120</td>
+        <td>Jurusan Ilmu Pengetahuan Alam</td>
         <td>
-          <a href="edit-kelas.php?id=KLS001" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-kelas.php?id=KLS001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data kelas ini?');">Hapus</a>
+          <a href="edit-jurusan.php?id=JRS001" class="btn btn-warning btn-sm">Edit</a>
+          <a href="hapus-jurusan.php?id=JRS001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus jurusan ini?');">Hapus</a>
         </td>
       </tr>
       <tr>
-        <td>KLS002</td>
-        <td>XI IPS 2</td>
+        <td>JRS002</td>
         <td>IPS</td>
-        <td>Pak Ahmad</td>
-        <td>30</td>
+        <td>Ibu Ratna Dewi</td>
+        <td>100</td>
+        <td>Jurusan Ilmu Pengetahuan Sosial</td>
         <td>
-          <a href="edit-kelas.php?id=KLS002" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-kelas.php?id=KLS002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data kelas ini?');">Hapus</a>
+          <a href="edit-jurusan.php?id=JRS002" class="btn btn-warning btn-sm">Edit</a>
+          <a href="hapus-jurusan.php?id=JRS002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus jurusan ini?');">Hapus</a>
         </td>
       </tr>
 
@@ -65,7 +65,7 @@
       <!--
       <tr>
         <td colspan="6">
-          <div class="alert alert-warning text-center m-0">Data kelas tidak ditemukan.</div>
+          <div class="alert alert-warning text-center m-0">Data jurusan tidak ditemukan.</div>
         </td>
       </tr>
       -->
@@ -73,7 +73,7 @@
   </table>
 
   <!-- Tombol Tambah -->
-  <a href="tambah-kelas.php" class="btn btn-primary">+ Tambah Kelas</a>
+  <a href="tambah-jurusan.php" class="btn btn-primary">+ Tambah Jurusan</a>
 
   <x-footer></x-footer>
 </div>
