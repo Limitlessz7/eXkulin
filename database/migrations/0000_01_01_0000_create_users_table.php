@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->boolean('usr_activation')->default(false);
 
-            $table->unsignedBigInteger('usr_created_by');
+            $table->unsignedBigInteger('usr_created_by')->nullable();
             $table->unsignedBigInteger('usr_updated_by')->nullable();
             $table->unsignedBigInteger('usr_deleted_by')->nullable();
 

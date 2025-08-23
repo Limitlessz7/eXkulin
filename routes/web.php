@@ -66,6 +66,9 @@ Route::post('/extracurriculars/{id}', [ExtracurricularController::class, 'store'
 
 // Kelola akun
 Route::get('/accounts/manage-account',[AccountController::class, 'index']);
+Route::get('/accounts/manage-account/create-account',[AccountController::class, 'create']);
+Route::post('/accounts/manage-account',[AccountController::class, 'store']);
+Route::get('/accounts/manage-account/{user}/edit',[AccountController::class, 'edit']);
+Route::put('/accounts/manage-account/{user}',[AccountController::class, 'update']);
 Route::delete('/accounts/manage-account/{user}',[AccountController::class, 'delete']);
-
 Route::get('/accounts/list-account', [AccountController::class, 'show']);

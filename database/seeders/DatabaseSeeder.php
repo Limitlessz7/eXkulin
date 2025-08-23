@@ -34,5 +34,8 @@ class DatabaseSeeder extends Seeder
           'usr_updated_at' => now(),
         ]
 ]);
+
+// sampling
+$this->call([RoleSeeder::class]);
     }
 }

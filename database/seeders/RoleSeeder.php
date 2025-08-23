@@ -23,5 +23,7 @@ class RoleSeeder extends Seeder
             'rl_description' => 'Role untuk bagian kesiswaan',
             'rl_create_by' => 1,
         ]);
+
+       
     }
 }

@@ -35,7 +35,7 @@
       @endif
 
     </div>
-    <a href="tambah-akun.php" class="btn btn-primary mb-3 mt-2">+ Tambah Akun</a>
+    <a href="/accounts/manage-account/create-account" class="btn btn-primary mb-3 mt-2">+ Tambah Akun</a>
 
     <table class="table table-bordered">
       <thead class="table-dark text-center">
@@ -56,7 +56,7 @@
           <td>{{ $user->usr_roles_id }}</td>
           <td>{{ $user->usr_activation }}</td>
           <td>
-            <a href="edit-akun.php?id=U001" class="btn btn-warning btn-sm">Edit</a>
+            <a href="/accounts/manage-account/{{ $user->usr_id }}/edit" class="btn btn-warning btn-sm">Edit</a>
             <form action="/accounts/manage-account/{{ $user->usr_id }}" method="POST" onsubmit=" return confirm('yakin ingin dihapus?')">
               @csrf
               @method('delete')

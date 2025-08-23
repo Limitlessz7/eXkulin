@@ -20,6 +20,7 @@ class User extends Authenticatable
         'usr_name',
         'usr_email',
         'usr_password',
+        'usr_telephone'
     ];
 
     // Laravel default: pakai kolom 'password'
