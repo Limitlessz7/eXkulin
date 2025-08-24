@@ -12,9 +12,36 @@ class ExtracurricularController extends Controller
     // Tampilkan semua eskul dengan info deskripsi dan pengumuman (kalau ada relasi pengumuman)
     public function index()
     {
-        $eskuls = Extracurricular::all();
-        return view('extracurriculars.index', compact('eskuls'));
+        return view('extracurriculars.index', [
+            'extracurriculars' => Extracurricular::all()
+        ]);
     }
+
+
+    public function createEkskul(){
+        return view('extracurriculars.create-extracurricular', [
+            'title' => 'tambah ekskul',
+        ]);
+    }
+
+    public function storeEkskul(Request $request){
+        $validated = $request->validate([
+            'ext_name' => 'required|max:255',
+            'ext_description' => 'nullable',
+            'ext_status' => 'required'
+        ]);
+
+        Extracurricular::create($validated);
+        return redirect('/extracurriculars/manage-extracurricular')->with('succes', 'Berhasil menambahkan ekskul');
+    }
+
+    public function delete(Extracurricular $extracurricular){
+
+        Extracurricular::where('ext_id', $extracurricular->ext_id)->delete();
+
+        return redirect('/extracurriculars/manage-extracurricular')->with('succes', 'Data berhasil dihapus');   
+    }
+
 
     // Form daftar eskul (hanya siswa)
     public function create($id)

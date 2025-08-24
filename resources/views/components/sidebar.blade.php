@@ -79,7 +79,7 @@
             <p>Account <i class="nav-arrow bi bi-chevron-right"></i></p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage Role</p></a></li>
+            <li class="nav-item"><a href="/accounts/manage-role" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage Role</p></a></li>
             <li class="nav-item"><a href="/accounts/manage-account" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage Account</p></a></li>
             <li class="nav-item"><a href="/accounts/list-account" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Account List</p></a></li>
           </ul>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mnage ekskul</title>
+  <title>Manage ekskul</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <x-resource></x-cssjs>
@@ -18,41 +18,46 @@
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 
+  @if (session('succes'))
+  <div class="alert alert-primary alert-dismissible" role="alert">
+    {{ session('succes') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>    
+@endif
 
-    <div class="alert alert-danger text-center">Query gagal: </div>
-
+    {{-- <div class="alert alert-danger text-center">Query gagal: </div> --}}
+    <a href="/extracurriculars/manage-extracurricular/create-extracurricular" class="btn btn-primary mb-3 mt-2">+ Tambah ekskul</a>
     <table class="table table-bordered">
       <thead class="table-dark text-center">
         <tr>
-          <th>ID Buku</th>
-          <th>Kategori</th>
-          <th>Nama Buku</th>
-          <th>Harga</th>
-          <th>Stok</th>
-          <th>Penerbit</th>
-          <th>Action</th>
+          <th>ID Ekskul</th>
+          <th>Nama ekskul</th>
+          <th>Status</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody class="text-center">
-        
+        @if ($extracurriculars->isEmpty())
+        <tr><td colspan="7"><div class="alert alert-warning text-center m-0">Data ekskul tidak ditemukan.</div></td></tr>
+        @else
+        @foreach ($extracurriculars as $extracurricular)
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{ $extracurricular->ext_id }}</td>
+              <td>{{ $extracurricular->ext_name }}</td>
+              <td>{{ $extracurricular->ext_status }}</td>
               <td>
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
-                <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus buku ini?');">Hapus</a>
+                <form action="/extracurriculars/manage-extracurricular/{{ $extracurricular->ext_id }}" method="POST" onsubmit=" return confirm('yakin ingin dihapus?')">
+                  @csrf
+                  @method('delete')
+                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                </form>
               </td>
             </tr>
-         
-          <tr><td colspan="7"><div class="alert alert-warning text-center m-0">Data buku tidak ditemukan.</div></td></tr>
-     
+            @endforeach         
+          @endif
       </tbody>
     </table>
-    <a href="add-buku.php" class="btn btn-primary">+ Tambah Buku</a>
  
 
   <hr class="my-5">
@@ -96,7 +101,7 @@
     </table>
     <a href="" class="btn btn-primary">+ Tambah Penerbit</a>
     <x-footer></x-footer>
- >
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

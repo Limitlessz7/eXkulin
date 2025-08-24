@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\RoleController;
+use App\Models\Extracurricular;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,10 +60,17 @@ Route::middleware(['auth'])->group(function () {
 // OPTIONAL: Clean aliases if you also use `/extracurriculars` URLs
 // =====================
 // If you want to keep the `/extracurriculars` version too, you can alias them:
-Route::redirect('/extracurriculars', '/eskul')->name('extracurriculars.index');
-Route::redirect('/extracurriculars/{id}', '/eskul/{id}');
-Route::redirect('/extracurriculars/{id}/create', '/eskul/{id}/daftar');
-Route::post('/extracurriculars/{id}', [ExtracurricularController::class, 'store'])->name('extracurriculars.store');
+// Route::redirect('/extracurriculars', '/eskul')->name('extracurriculars.index');
+// Route::redirect('/extracurriculars/{id}', '/eskul/{id}');
+// Route::redirect('/extracurriculars/{id}/create', '/eskul/{id}/daftar');
+// Route::post('/extracurriculars/{id}', [ExtracurricularController::class, 'store'])->name('extracurriculars.store');
+
+
+// kelola ekskul
+Route::get('/extracurriculars/manage-extracurricular', [ExtracurricularController::class, 'index']);
+Route::get('/extracurriculars/manage-extracurricular/create-extracurricular', [ExtracurricularController::class, 'createEkskul']);
+Route::post('/extracurriculars/manage-extracurricular', [ExtracurricularController::class, 'storeEkskul']);
+Route::delete('/extracurriculars/manage-extracurricular/{extracurricular}',[ExtracurricularController::class, 'delete']);
 
 
 // Kelola akun
@@ -72,3 +81,7 @@ Route::get('/accounts/manage-account/{user}/edit',[AccountController::class, 'ed
 Route::put('/accounts/manage-account/{user}',[AccountController::class, 'update']);
 Route::delete('/accounts/manage-account/{user}',[AccountController::class, 'delete']);
 Route::get('/accounts/list-account', [AccountController::class, 'show']);
+
+// kelola role
+Route::get('/accounts/manage-role', [RoleController::class, 'index']);
+Route::delete('/accounts/manage-role/{role}',[RoleController::class, 'delete']);

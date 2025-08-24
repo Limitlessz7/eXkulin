@@ -23,11 +23,11 @@
 
   <!-- Alert Gagal (jika ada) -->
   <!-- <div class="alert alert-danger text-center">Query gagal: [pesan error]</div> -->
+  <a href="tambah-role.php" class="btn btn-primary mb-3 mt-2">+ Tambah Role</a>
 
   <table class="table table-bordered">
     <thead class="table-dark text-center">
       <tr>
-        <th>ID</th>
         <th>Nama Role</th>
         <th>Deskripsi</th>
         <th>Aksi</th>
@@ -35,25 +35,20 @@
     </thead>
     <tbody class="text-center">
       <!-- Contoh data -->
+      @foreach ($roles as $role)
       <tr>
-        <td>R001</td>
-        <td>Admin</td>
-        <td>Memiliki akses penuh ke sistem</td>
+        <td>{{ $role->rl_name }}</td>
+        <td>{{ $role->rl_description }}</td>
         <td>
-          <a href="edit-role.php?id=R001" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-role.php?id=R001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus role ini?');">Hapus</a>
+          <a href="accounts/manage-role/{{ $role->rl_id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+          <form action="/accounts/manage-role/{{ $role->rl_id }}" method="POST" onsubmit=" return confirm('yakin ingin dihapus?')">
+            @csrf
+            @method('delete')
+          <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+          </form>
         </td>
       </tr>
-      <tr>
-        <td>R002</td>
-        <td>Siswa</td>
-        <td>Akses terbatas, hanya melihat data</td>
-        <td>
-          <a href="edit-role.php?id=R002" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-role.php?id=R002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus role ini?');">Hapus</a>
-        </td>
-      </tr>
-
+      @endforeach
       <!-- Jika data kosong -->
       <!--
       <tr>
@@ -64,9 +59,7 @@
       -->
     </tbody>
   </table>
-
-  <a href="tambah-role.php" class="btn btn-primary">+ Tambah Role</a>
-
+    </div>
   <x-footer></x-footer>
 </div>
 

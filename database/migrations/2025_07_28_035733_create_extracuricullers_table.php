@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('ext_status');
             $table->text('ext_description')->nullable();
 
-            $table->unsignedBigInteger('ext_created_by');
+            $table->unsignedBigInteger('ext_created_by')->nullable();
             $table->unsignedBigInteger('ext_updated_by')->nullable();
             $table->unsignedBigInteger('ext_deleted_by')->nullable();
 
