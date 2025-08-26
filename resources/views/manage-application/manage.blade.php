@@ -32,7 +32,7 @@
         <th>Nama Siswa</th>
         <th>Ekstrakurikuler</th>
         <th>Tanggal Daftar</th>
-        <th>Status</th>
+   
         <th>Aksi</th>
       </tr>
     </thead>
@@ -43,10 +43,10 @@
         <td>Aulia Rahma</td>
         <td>Basketball</td>
         <td>2025-08-01</td>
-        <td><span class="badge bg-success">Diterima</span></td>
+     
         <td>
-          <a href="edit-pendaftaran.php?id=P001" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-pendaftaran.php?id=P001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus pendaftaran ini?');">Hapus</a>
+          <a href="edit-pendaftaran.php?id=P001" class="btn btn-warning btn-sm">Terima</a>
+          <a href="hapus-pendaftaran.php?id=P001" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menolak pendaftaran ini?');">Tolak</a>
         </td>
       </tr>
       <tr>
@@ -54,10 +54,10 @@
         <td>Rizky Darmawan</td>
         <td>Basketball</td>
         <td>2025-08-03</td>
-        <td><span class="badge bg-danger">Ditolak</span></td>
+       
         <td>
-          <a href="edit-pendaftaran.php?id=P002" class="btn btn-warning btn-sm">Edit</a>
-          <a href="hapus-pendaftaran.php?id=P002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus pendaftaran ini?');">Hapus</a>
+          <a href="edit-pendaftaran.php?id=P002" class="btn btn-warning btn-sm">Terima</a>
+          <a href="hapus-pendaftaran.php?id=P002" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menolak pendaftaran ini?');">Tolak</a>
         </td>
       </tr>
 
@@ -72,8 +72,7 @@
     </tbody>
   </table>
 
-  <!-- Tombol Tambah -->
-  <a href="tambah-pendaftaran.php" class="btn btn-primary">+ Tambah Pendaftaran</a>
+ 
 
 
 </div>
