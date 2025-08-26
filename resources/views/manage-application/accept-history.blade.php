@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Tertolak - Ekstrakurikuler</title>
+  <title>User Diterima - Ekstrakurikuler</title>
   <style>
     select {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
-  color: #333;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  outline: none;
-  cursor: pointer;
-}
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #333;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+      cursor: pointer;
+    }
 
-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-}
+    select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    }
 
-.filter-container label {
-  font-weight: bold;
-  margin-right: 8px;
-}
+    .filter-container label {
+      font-weight: bold;
+      margin-right: 8px;
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -68,20 +68,19 @@ select:focus {
   <x-sidebar></x-sidebar>
 
   <div class="container">
-    <h2 class="mb-3">Daftar User yang diterima masuk Ekstrakurikuler</h2>
+    <h2 class="mb-3">Daftar User yang Diterima Masuk Ekstrakurikuler</h2>
 
     <!-- 🔽 Filter Dropdown -->
     <div class="filter-container">
       <label for="eskulFilter">Filter berdasarkan Ekstrakurikuler:</label>
       <select id="eskulFilter" onchange="filterTable()">
         <option value="all">Semua</option>
-        <option value="Basketball">Basketball</option>
-        <option value="Paduan Suara">Paduan Suara</option>
-        <option value="Pramuka">Pramuka</option>
+        <option value="basketball">Basketball</option>
+        <option value="rohis">Rohis</option>
       </select>
     </div>
 
-    <table id="rejectedTable">
+    <table id="acceptedTable" class="table table-bordered table-striped text-center">
       <thead>
         <tr>
           <th>ID User</th>
@@ -91,30 +90,11 @@ select:focus {
         </tr>
       </thead>
       <tbody>
-        <!-- Contoh data user tertolak -->
         <tr>
-          <td>U001</td>
-          <td>Rina Putri</td>
+          <td>1</td>
+          <td>Aulia Rahma</td>
           <td>Basketball</td>
-          <td>Tidak lolos seleksi fisik</td>
-        </tr>
-        <tr>
-          <td>U002</td>
-          <td>Ahmad Rizal</td>
-          <td>Pramuka</td>
-          <td>Kuota penuh</td>
-        </tr>
-        <tr>
-          <td>U003</td>
-          <td>Silvia Hartati</td>
-          <td>Paduan Suara</td>
-          <td>Tidak hadir saat audisi</td>
-        </tr>
-        <tr>
-          <td>U004</td>
-          <td>Budi Santoso</td>
-          <td>Basketball</td>
-          <td>Tidak memenuhi tinggi badan minimum</td>
+          <td>Aktif kegiatan Olahraga</td>
         </tr>
       </tbody>
     </table>
@@ -128,7 +108,7 @@ select:focus {
   <script>
     function filterTable() {
       const filter = document.getElementById("eskulFilter").value.toLowerCase();
-      const table = document.getElementById("rejectedTable");
+      const table = document.getElementById("acceptedTable");
       const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
       let found = false;
 

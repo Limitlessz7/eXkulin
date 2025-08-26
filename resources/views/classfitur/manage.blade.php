@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manajemen Kelas & Jurusan</title>
+  <title>Manajemen Kelas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +13,7 @@
 <x-sidebar></x-sidebar>
 
 <div class="container mt-4">
-  <h3>Manajemen Kelas & Jurusan</h3>
+  <h3>Manajemen Kelas</h3>
 
   <!-- Form Pencarian -->
   <form class="d-flex mb-3" method="GET" action="">
@@ -39,9 +39,9 @@
     <tbody class="text-center">
       <!-- Contoh data kelas -->
       <tr>
-        <td>KLS001</td>
-        <td>X IPA 1</td>
-        <td>IPA</td>
+        <td>1</td>
+        <td>X DKV</td>
+        <td>DESAIN KOMUNIKASI VISUAL</td>
         <td>Ibu Siti Aisyah</td>
         <td>32</td>
         <td>
@@ -50,9 +50,9 @@
         </td>
       </tr>
       <tr>
-        <td>KLS002</td>
-        <td>XI IPS 2</td>
-        <td>IPS</td>
+        <td>2</td>
+        <td>X PPLG</td>
+        <td>PENGEMBANGAN PERANGKAT LUNAK DAN GIM</td>
         <td>Pak Ahmad</td>
         <td>30</td>
         <td>
@@ -75,9 +75,9 @@
   <!-- Tombol Tambah -->
   <a href="tambah-kelas.php" class="btn btn-primary">+ Tambah Kelas</a>
 
-  <x-footer></x-footer>
-</div>
 
+</div>
+  <x-footer></x-footer> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

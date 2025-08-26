@@ -85,3 +85,40 @@ Route::get('/accounts/list-account', [AccountController::class, 'show']);
 // kelola role
 Route::get('/accounts/manage-role', [RoleController::class, 'index']);
 Route::delete('/accounts/manage-role/{role}',[RoleController::class, 'delete']);
+// kelola kelas
+Route::get('/class/manage', function () {
+    return view('classfitur.manage');
+});
+// eksul view
+Route::get('/extracurricular/view', function (Extracurricular $extracurricular) {
+    $eskul = Extracurricular::all();
+    return view('extracurriculars.views', compact('eskul'));
+});
+// major manage
+Route::get('/major/manage', function () {
+    return view('major.manage');
+});
+// major view
+Route::get('/major/view', function () {
+    return view('major.view');      
+});
+// membership manage
+Route::get('/membership/manage', function () {
+    return view('membership.manage-membership');
+});
+// membership view
+Route::get('/membership/view', function () {
+    return view('membership.view-members');
+});
+// manage application
+Route::get('/manage-application/manage', function () {
+    return view('manage-application.manage');
+});
+// accept history
+Route::get('/manage-application/accept-history', function () {
+    return view('manage-application.accept-history');
+});
+// reject history
+Route::get('/manage-application/reject-history', function () {
+    return view('manage-application.reject-history');       
+});

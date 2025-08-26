@@ -30,7 +30,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/extracurricular/view" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>View</p>
               </a>
@@ -45,32 +45,37 @@
         </li>
 
         <!-- Manage Applications -->
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon bi bi-speedometer"></i>
-            <p>Manage Applications <i class="nav-arrow bi bi-chevron-right"></i></p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Join Requests</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Accept History</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Reject History</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+      <li class="nav-item has-treeview">
+  <a href="#" class="nav-link">
+    <i class="nav-icon bi bi-speedometer"></i>
+    <p>
+      Manage Applications
+      <i class="nav-arrow bi bi-chevron-right"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+      <a href="/manage-application/manage" class="nav-link">
+        <i class="nav-icon bi bi-circle"></i>
+        <p>Manage</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/manage-application/accept-history" class="nav-link">
+        <i class="nav-icon bi bi-circle"></i>
+        <p>Accept History</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/manage-application/reject-history" class="nav-link">
+        <i class="nav-icon bi bi-circle"></i>
+        <p>Reject History</p>
+      </a>
+    </li>
+  </ul>
+</li>
+
+
 
         <!-- Account -->
         <li class="nav-item">
@@ -92,8 +97,8 @@
             <p>Membership <i class="nav-arrow bi bi-chevron-right"></i></p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>View Member</p></a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
+            <li class="nav-item"><a href="/membership/view" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>View Member</p></a></li>
+            <li class="nav-item"><a href="/membership/manage" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
           </ul>
         </li>
 
@@ -104,7 +109,7 @@
             <p>Class <i class="nav-arrow bi bi-chevron-right"></i></p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
+            <li class="nav-item"><a href="/class/manage" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
           </ul>
         </li>
 
@@ -115,8 +120,8 @@
             <p>Major <i class="nav-arrow bi bi-chevron-right"></i></p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>View</p></a></li>
+            <li class="nav-item"><a href="/major/manage" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>Manage</p></a></li>
+            <li class="nav-item"><a href="/major/view" class="nav-link"><i class="nav-icon bi bi-circle"></i><p>View</p></a></li>
           </ul>
         </li>
 

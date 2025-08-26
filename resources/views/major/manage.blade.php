@@ -39,7 +39,7 @@
     <tbody class="text-center">
       <!-- Contoh data jurusan -->
       <tr>
-        <td>JRS001</td>
+        <td>1</td>
         <td>IPA</td>
         <td>Drs. Supriyadi</td>
         <td>120</td>
@@ -50,7 +50,7 @@
         </td>
       </tr>
       <tr>
-        <td>JRS002</td>
+        <td>2</td>
         <td>IPS</td>
         <td>Ibu Ratna Dewi</td>
         <td>100</td>
@@ -75,9 +75,9 @@
   <!-- Tombol Tambah -->
   <a href="tambah-jurusan.php" class="btn btn-primary">+ Tambah Jurusan</a>
 
-  <x-footer></x-footer>
+ 
 </div>
-
+ <x-footer></x-footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

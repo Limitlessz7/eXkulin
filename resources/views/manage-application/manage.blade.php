@@ -39,9 +39,9 @@
     <tbody class="text-center">
       <!-- Contoh data pendaftaran -->
       <tr>
-        <td>P001</td>
+        <td>1</td>
         <td>Aulia Rahma</td>
-        <td>Basket</td>
+        <td>Basketball</td>
         <td>2025-08-01</td>
         <td><span class="badge bg-success">Diterima</span></td>
         <td>
@@ -50,9 +50,9 @@
         </td>
       </tr>
       <tr>
-        <td>P002</td>
+        <td>2</td>
         <td>Rizky Darmawan</td>
-        <td>Paduan Suara</td>
+        <td>Basketball</td>
         <td>2025-08-03</td>
         <td><span class="badge bg-danger">Ditolak</span></td>
         <td>
@@ -75,9 +75,9 @@
   <!-- Tombol Tambah -->
   <a href="tambah-pendaftaran.php" class="btn btn-primary">+ Tambah Pendaftaran</a>
 
-  <x-footer></x-footer>
-</div>
 
+</div>
+  <x-footer></x-footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

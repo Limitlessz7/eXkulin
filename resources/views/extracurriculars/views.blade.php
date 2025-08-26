@@ -3,189 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daftar Ekstrakurikuler</title>
+  <title>Manajemen Ekskul</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .btn {
-      padding: 6px 12px;
-      margin-right: 8px;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .btn-info { background-color: #007bff; color: white; }
-    .btn-announcement { background-color: #28a745; color: white; }
-    .btn-join { background-color: #ffc107; color: white; }
-
-    #modal, #modal-announcement, #modal-join {
-      display: none;
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      padding: 20px;
-      max-width: 400px;
-      z-index: 1000;
-    }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 900;
-    }
-
-    .close-btn {
-      background: #dc3545;
+    /* Header tabel warna hitam gelap, tulisan putih */
+    thead {
+      background-color: #212529; /* Bootstrap dark */
       color: white;
-      border: none;
-      padding: 5px 8px;
-      cursor: pointer;
-      float: right;
+    }
+    /* Tombol action */
+    .btn-edit {
+      background-color: #ffc107; /* kuning */
+      color: black;
+      padding: 4px 12px;
       border-radius: 4px;
+      border: none;
+    }
+    .btn-delete {
+      background-color: #dc3545; /* merah */
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 4px;
+      display: block;
+    }
+    /* Agar tombol delete di bawah edit */
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
     }
   </style>
 </head>
 <body>
   <x-resource></x-resource>
-  <x-navbar></x-navbar>
+  <x-navbar></x-navbar> 
   <x-sidebar></x-sidebar>
+  <div class="container my-4">
+    <h3>Views Ekskul</h3>
 
-  <h1>Daftar Ekstrakurikuler</h1>
+    <form class="d-flex mb-3" role="search" style="max-width: 350px;">
+      <input class="form-control me-2" type="search" placeholder="Cari eskul..." aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Nama Ekstrakurikuler</th>
-        <th>Deskripsi</th>
-        <th>Pengumuman</th>
-        <th>Aksi</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Basketball</td>
-        <td><button class="btn btn-info" onclick="showDescription('Tim bola basket sekolah')">Info Deskripsi</button></td>
-        <td><button class="btn btn-announcement" onclick="showAnnouncement('Latihan hari Senin pukul 4 sore')">Info Pengumuman</button></td>
-        <td><button class="btn btn-join" onclick="joinEskul('Basketball')">Gabung ke Eskul!</button></td>
-      </tr>
-      <tr>
-        <td>Paduan Suara</td>
-        <td><button class="btn btn-info" onclick="showDescription('Grup paduan suara sekolah')">Info Deskripsi</button></td>
-        <td><button class="btn btn-announcement" onclick="showAnnouncement('Audisi terbuka minggu depan')">Info Pengumuman</button></td>
-        <td><button class="btn btn-join" onclick="joinEskul('Paduan Suara')">Gabung ke Eskul!</button></td>
-      </tr>
-      <tr>
-        <td>Pramuka</td>
-        <td><button class="btn btn-info" onclick="showDescription('Ekstrakurikuler pramuka')">Info Deskripsi</button></td>
-        <td><button class="btn btn-announcement" onclick="showAnnouncement('Kemah akhir pekan ini')">Info Pengumuman</button></td>
-        <td><button class="btn btn-join" onclick="joinEskul('Pramuka')">Gabung ke Eskul!</button></td>
-      </tr>
-    </tbody>
-  </table>
+  
 
-  <!-- Overlay -->
-  <div id="overlay" onclick="closeAllModals()"></div>
+  <table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>ID Ekskul</th>
+      <th>Nama ekskul</th>
+      <th>Status</th>
+      <th>Aksi</th> <!-- kolom baru -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>PSHT</td>
+      <td>Aktif</td>
+      <td>
+        <button class="btn btn-info btn-sm mb-1" onclick="showDescription('Deskripsi PSHT: Pencak Silat Tradisional')">Info Deskripsi</button><br>
+        <button class="btn btn-success btn-sm mb-1" onclick="showAnnouncement('Pengumuman PSHT: Latihan tiap Rabu pukul 16.00')">Info Pengumuman</button><br>
+        <button class="btn btn-warning btn-sm" onclick="joinEskul('PSHT')">Gabung Eskul</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Basketball</td>
+      <td>Tidak Aktif</td>
+      <td>
+        <button class="btn btn-info btn-sm mb-1" onclick="showDescription('Deskripsi Basketball: Tim bola basket sekolah')">Info Deskripsi</button><br>
+        <button class="btn btn-success btn-sm mb-1" onclick="showAnnouncement('Pengumuman Basketball: Latihan Jumat pukul 15.00')">Info Pengumuman</button><br>
+        <button class="btn btn-warning btn-sm" onclick="joinEskul('Basketball')">Gabung Eskul</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-  <!-- Modal Deskripsi -->
-  <div id="modal">
-    <button class="close-btn" onclick="closeModal()">X</button>
-    <h3>Deskripsi Ekstrakurikuler</h3>
-    <p id="modal-content"></p>
+
   </div>
-
-  <!-- Modal Pengumuman -->
-  <div id="modal-announcement">
-    <button class="close-btn" onclick="closeAnnouncementModal()">X</button>
-    <h3>Pengumuman Ekstrakurikuler</h3>
-    <p id="modal-announcement-content"></p>
-  </div>
-
-  <!-- Modal Gabung -->
-  <div id="modal-join">
-    <button class="close-btn" onclick="closeJoinModal()">X</button>
-    <h3>Gabung Ekstrakurikuler</h3>
-    <p id="modal-join-content"></p>
-    <button class="btn btn-join" onclick="confirmJoin()">Konfirmasi</button>
-  </div>
-
+<x-footer></x-footer>  
+  <!-- Bootstrap JS Bundle (optional) -->
   <script>
     function showDescription(text) {
-      document.getElementById('modal-content').textContent = text;
-      document.getElementById('modal').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      closeOtherModals('modal');
-    }
+  alert('Deskripsi: ' + text);
+}
 
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
+function showAnnouncement(text) {
+  alert('Pengumuman: ' + text);
+}
 
-    function showAnnouncement(text) {
-      document.getElementById('modal-announcement-content').textContent = text;
-      document.getElementById('modal-announcement').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      closeOtherModals('modal-announcement');
-    }
+function joinEskul(name) {
+  if(confirm('Apakah kamu ingin bergabung dengan eskul ' + name + '?')) {
+    alert('Kamu telah bergabung dengan ' + name);
+  }
+}
 
-    function closeAnnouncementModal() {
-      document.getElementById('modal-announcement').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-
-    function joinEskul(name) {
-      document.getElementById('modal-join-content').textContent = `Apakah kamu yakin ingin bergabung dengan eskul ${name}?`;
-      document.getElementById('modal-join').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      closeOtherModals('modal-join');
-    }
-
-    function closeJoinModal() {
-      document.getElementById('modal-join').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-
-    function confirmJoin() {
-      alert('Kamu telah bergabung dengan ekstrakurikuler!');
-      closeJoinModal();
-    }
-
-    function closeOtherModals(current) {
-      if (current !== 'modal') document.getElementById('modal').style.display = 'none';
-      if (current !== 'modal-announcement') document.getElementById('modal-announcement').style.display = 'none';
-      if (current !== 'modal-join') document.getElementById('modal-join').style.display = 'none';
-    }
-
-    function closeAllModals() {
-      closeModal();
-      closeAnnouncementModal();
-      closeJoinModal();
-    }
   </script>
-
-  <x-footer></x-footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

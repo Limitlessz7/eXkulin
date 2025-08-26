@@ -75,8 +75,8 @@
       <thead class="table-dark text-center">
         <tr>
           <th>ID</th>
-          <th>Nama</th>
-          <th>Status</th>
+          <th>Nama Eskul</th>
+          <th>Title</th>
           <th>description</th>
           <th>Action</th>
         </tr>
@@ -87,19 +87,19 @@
             <tr>
               <td></td>
               <td></td>
-              <td></td>
+             <td></td>
               <td></td>
               <td>
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
-                <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus penerbit ini?')">Hapus</a>
+                <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus pengumuman ini?')">Hapus</a>
               </td>
             </tr>
   
-          <tr><td colspan="6"><div class="alert alert-warning text-center m-0">Data penerbit tidak ditemukan.</div></td></tr>
+          <tr><td colspan="6"><div class="alert alert-warning text-center m-0">Data pengumuman tidak ditemukan.</div></td></tr>
       
       </tbody>
     </table>
-    <a href="" class="btn btn-primary">+ Tambah Penerbit</a>
+    <a href="" class="btn btn-primary">+ Tambah Pengumuman</a>
     <x-footer></x-footer>
 
 </div>

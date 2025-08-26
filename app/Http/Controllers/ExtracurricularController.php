@@ -65,6 +65,11 @@ class ExtracurricularController extends Controller
             'frm_created_by' => Auth::id(),
         ]);
 
-        return redirect()->route('extracurricular.show', $id)->with('success', 'Berhasil daftar eskul!');
+        return redirect()->route('extracurricular.index')->with('success', 'Pendaftaran ekstrakurikuler berhasil dikirim!');
+    }
+    public function view(Extracurricular $extracurricular)
+    {
+        $eskul = Extracurricular::all();
+        return view('extracurriculars.view', compact('extracurriculars'));          
     }
 }

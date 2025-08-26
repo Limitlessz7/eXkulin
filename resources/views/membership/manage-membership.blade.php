@@ -37,7 +37,7 @@
     <tbody class="text-center">
       <!-- Contoh data -->
       <tr>
-        <td>AG001</td>
+        <td>1</td>
         <td>Rizky Darmawan</td>
         <td>Rohis</td>
         <td><span class="badge bg-success">Aktif</span></td>
@@ -74,7 +74,7 @@
     <tbody class="text-center">
       <!-- Contoh data -->
       <tr>
-        <td>JW001</td>
+        <td>1</td>
         <td>Rizky Darmawan</td>
         <td>Rohis</td>
         <td>Ketua</td>
