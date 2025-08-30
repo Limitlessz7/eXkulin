@@ -39,7 +39,7 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">SWIFTSERVE WEB</h1>
+                        <h1 class="mx-auto my-0 text-uppercase">eXkulin</h1>
                      
                     </div>
                 </div>
@@ -53,13 +53,8 @@
                     <div class="col-lg-8">
                      
                         <p class="text-white-50">
-                            SwiftServe Web adalah penyedia layanan pembuatan website, aplikasi Android, dan desktop yang disesuaikan dengan kebutuhan Anda.
-
-Kami mengutamakan kualitas, keamanan, dan kecepatan pengerjaan, dengan harga yang tetap terjangkau.
-
-Didukung oleh tim berpengalaman, kami siap membantu Anda mewujudkan ide digital menjadi kenyataan.
-
-Kepuasan pelanggan adalah prioritas kami. Dengan layanan yang responsif dan profesional, SwiftServe adalah mitra terpercaya untuk solusi digital yang inovatif.
+                           eXkulin adalah aplikasi yang dibuat untuk memudahkan siswa melihat informasi ekskul, dan mendaftar masuk ke dalam ekskul.
+                           eXkulin juga memudahkan guru pembina ekskul dalam mengelola anggota ekskul, Aplikasi ini diimplementasikan menggunakan teknologi Laravel.
                         </p>
                     </div>
                 </div>
@@ -79,30 +74,35 @@ Kepuasan pelanggan adalah prioritas kami. Dengan layanan yang responsif dan prof
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Aman dan terpercaya</h4>
-                                    <p class="mb-0 text-white-50">Semua proyek dikembangkan dengan standar keamanan tinggi dan diawasi langsung oleh tim profesional.
-    Kami juga menjaga kerahasiaan data dan menjamin keaslian setiap solusi yang dibuat..</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Two Row-->
-                <div class="row gx-0 justify-content-center" data-aos="fade-up>
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Pelayanan cepat</h4>
-                                    <p class="mb-0 text-white-50"> Waktu Anda sangat berharga. Kami memastikan pengerjaan yang cepat tanpa mengurangi kualitas, serta komunikasi yang responsif dalam setiap tahap proyek.!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                         <div class="project-text w-100 my-auto text-center text-lg-left">
+    <h4 class="text-white">Mudah dan Terpercaya</h4>
+    <p class="mb-0 text-white-50">
+        eXkulin adalah aplikasi yang dikembangkan dengan standar keamanan tinggi untuk menjaga data siswa dan informasi ekskul. Kami menjaga kerahasiaan data dan memastikan setiap pendaftaran ekskul yang dilakukan aman dan terjamin.
+    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Two Row-->
+<div class="row gx-0 justify-content-center" data-aos="fade-up">
+    <div class="col-lg-6">
+        <img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." />
+    </div>
+    <div class="col-lg-6 order-lg-first">
+        <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+                    <h4 class="text-white">Pengelolaan yang Cepat</h4>
+                    <p class="mb-0 text-white-50">
+                        eXkulin memudahkan guru pembina ekskul untuk mengelola anggota ekskul dengan cara yang cepat dan efisien. Proses pendaftaran dan pengelolaan ekskul dilakukan secara otomatis dan responsif, memastikan tidak ada anggota yang tertinggal.
+                    </p>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+            </div> 
         </section>
         <!-- Signup-->
         <section class="signup-section" id="signup" data-aos="fade-up>
@@ -154,7 +154,7 @@ Kepuasan pelanggan adalah prioritas kami. Dengan layanan yang responsif dan prof
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
+                                <h4 class="text-uppercase m-0">Alamat perusahaan</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50">SMKS Mahaputra cerdas utama</div>
                             </div>
@@ -174,18 +174,14 @@ Kepuasan pelanggan adalah prioritas kami. Dengan layanan yang responsif dan prof
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <h4 class="text-uppercase m-0">No Telp</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+62 858-6030-6355</div>
+                                <div class="small text-black-50">+62 899-6653-6277</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
-                </div>
+             
             </div>
         </section>
         <!-- Footer-->

@@ -27,7 +27,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.css') }}" />
-<body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary">
+<body class="layout-fixed sidebar-expand-lg sidebar-mini bg-body-secondary" data-bs-theme="light">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
@@ -48,11 +48,7 @@
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
             <!--begin::Navbar Search-->
-            <li class="nav-item">
-              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="bi bi-search"></i>
-              </a>
-            </li>
+        
             <!--end::Navbar Search-->
             <!--begin::Messages Dropdown Menu-->
             

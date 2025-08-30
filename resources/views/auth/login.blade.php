@@ -93,7 +93,7 @@
         <div class="row g-0 h-100">
             <!-- Left side -->
             <div class="col-6 left-side">
-                <img src="{{ asset('logo.png') }}" alt="Swift Serve Logo" style="max-width: 150px;">
+                <img src="{{ asset('logo-projek.png') }}" alt="Swift Serve Logo" style="max-width: 150px;">
             </div>
 
             <!-- Right side -->

@@ -1,11 +1,21 @@
 <!--begin::Sidebar-->
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+<aside class="app-sidebar bg-primary text-white shadow" data-bs-theme="primary">
+  <style>
+    /* Ensure links and icons contrast on the blue sidebar */
+    .app-sidebar .nav-link { color: #fff !important; }
+    .app-sidebar .nav-link .nav-icon { color: #fff !important; }
+    .app-sidebar .nav-link:hover, .app-sidebar .nav-link.active { background-color: rgba(255,255,255,0.06); color: #fff !important; }
+    .app-sidebar .brand-text { color: #fff !important; }
+  </style>
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <a href="{{ route('dashboard') }}" class="brand-link">
-      <span class="brand-text fw-light">eXkulin</span>
+         <img src="{{ asset('logo-projek.png') }}" alt="Swift Serve Logo" class="brand-image img-circle elevation-3" style="opacity: .8; max-width: 60px; max-height: 60px;">
+      <span class="brand-text fw-light text-white">eXkulin</span>
+   
     </a>
   </div>
+
   <!--end::Sidebar Brand-->
 
   <!--begin::Sidebar Wrapper-->
